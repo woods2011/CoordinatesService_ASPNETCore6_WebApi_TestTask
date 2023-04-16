@@ -8,8 +8,9 @@ namespace CoordinatesServiceWebApi.UnitTests.Application;
 [TestFixture]
 public class CoordinatesServiceTests
 {
-    private const double Tol = 1e-4;
+    // Не использую [SetUp], т.к. в текущей реализации сервис не имеет состояния
     private readonly CoordinatesService _sut = new();
+    private const double Tol = 1e-4;
 
     [Test]
     public void GenerateCoordinates_ReturnsCorrectCount([Range(0, 5)] int count)
@@ -20,7 +21,6 @@ public class CoordinatesServiceTests
         // Assert
         Assert.That(coordinates, Has.Count.EqualTo(count));
     }
-    
 
     [Test]
     public void GenerateCoordinates_ReturnsValidValues([Range(1, 10)] int count)
@@ -47,12 +47,11 @@ public class CoordinatesServiceTests
         Assert.That(distance.Miles, Is.EqualTo(0.0).Within(Tol));
     }
 
-
     [Test]
     public void CalculateTotalDistance_ReturnsZero_WhenOnlyOneCoordinateProvided()
     {
         // Arrange
-        CoordinateDto[] coordinateDtos = new CoordinateDto[] { new(0.0, 0.0) };
+        CoordinateDto[] coordinateDtos = { new(0.0, 0.0) };
 
         // Act
         DistanceDto distance = _sut.CalculateTotalDistance(coordinateDtos);
@@ -62,7 +61,6 @@ public class CoordinatesServiceTests
         Assert.That(distance.Miles, Is.EqualTo(0.0).Within(Tol));
     }
 
-    
     [Test]
     [Repeat(30)]
     public void CalculateTotalDistance_ReturnsSameValue_WhenReverseOrder()
@@ -81,7 +79,6 @@ public class CoordinatesServiceTests
         // Assert
         Assert.That(distanceForReversed.Metres, Is.EqualTo(expectedDistance.Metres).Within(Tol));
     }
-    
     
     [TestCaseSource(nameof(TestData))]
     public void CalculateTotalDistance_ReturnsCorrectDistance_WhenMoreThenOneCoordinatesProvided(

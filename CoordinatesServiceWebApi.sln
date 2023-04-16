@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoordinatesServiceWebApi", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoordinatesServiceWebApi.UnitTests", "CoordinatesServiceWebApi.UnitTests\CoordinatesServiceWebApi.UnitTests.csproj", "{F6BF4A35-A07E-4B5E-A1A1-A6C2BF4ACA9A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoordinatesServiceWebApi.IntegrationTests", "CoordinatesServiceWebApi.IntegrationTests\CoordinatesServiceWebApi.IntegrationTests.csproj", "{F0D305DA-2BEB-4331-85FC-1F03F65F83E9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{F6BF4A35-A07E-4B5E-A1A1-A6C2BF4ACA9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6BF4A35-A07E-4B5E-A1A1-A6C2BF4ACA9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6BF4A35-A07E-4B5E-A1A1-A6C2BF4ACA9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0D305DA-2BEB-4331-85FC-1F03F65F83E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0D305DA-2BEB-4331-85FC-1F03F65F83E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0D305DA-2BEB-4331-85FC-1F03F65F83E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0D305DA-2BEB-4331-85FC-1F03F65F83E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

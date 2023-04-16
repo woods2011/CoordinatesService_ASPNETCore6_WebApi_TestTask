@@ -1,6 +1,5 @@
 using CoordinatesServiceWebApi.Dtos;
 using CoordinatesServiceWebApi.Domain;
-using CoordinatesServiceWebApi.Dtos;
 
 namespace CoordinatesServiceWebApi.Application;
 

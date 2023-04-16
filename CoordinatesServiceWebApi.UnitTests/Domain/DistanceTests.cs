@@ -22,7 +22,6 @@ public class DistanceTests
         Assert.That(inMiles, Is.EqualTo(expectedInMiles).Within(Tol));
     }
 
-
     [TestCase(1000.0)]
     [TestCase(2000.0)]
     [TestCase(0.0)]

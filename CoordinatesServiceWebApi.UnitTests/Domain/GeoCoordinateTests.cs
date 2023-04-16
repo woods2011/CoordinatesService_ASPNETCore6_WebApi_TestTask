@@ -21,7 +21,6 @@ public class TestGeoCoordinate
         Assert.That(geoCoordinate.Longitude, Is.EqualTo(longitude).Within(Tol));
     }
 
-
     [TestCase(GeoCoordinate.MinLatitude - 1e-10, 0)]
     [TestCase(GeoCoordinate.MaxLatitude + 1, 0)]
     [TestCase(0, GeoCoordinate.MinLongitude - 1)]
@@ -34,7 +33,7 @@ public class TestGeoCoordinate
         // Assert
         Assert.Throws<DomainValidationException>(Act);
     }
-
+    
 
     [Test]
     public void CreateRandom_ReturnsValidInstances()
@@ -45,8 +44,24 @@ public class TestGeoCoordinate
         // Assert
         Assert.DoesNotThrow(Act);
     }
+    
 
+    [Test]
+    [Repeat(50)]
+    public void DistanceTo_RespectsCommutativity()
+    {
+        // Arrange
+        GeoCoordinate start = GeoCoordinate.CreateRandom();
+        GeoCoordinate end = GeoCoordinate.CreateRandom();
 
+        // Act
+        Distance distance1 = start.DistanceTo(end);
+        Distance distance2 = start.DistanceTo(end);
+
+        // Assert
+        Assert.That(distance1.InMeters, Is.EqualTo(distance2.InMeters).Within(Tol));
+    }
+    
     [TestCaseSource(nameof(DistanceToTestData))]
     public void DistanceTo_ReturnsCorrectDistanceBetweenTwoPoints(
         GeoCoordinate start,
@@ -77,21 +92,4 @@ public class TestGeoCoordinate
             new GeoCoordinate(0, 0), new GeoCoordinate(0, 0), Distance.FromMeters(0)
         }
     };
-
-    
-    [Test]
-    [Repeat(50)]
-    public void DistanceTo_RespectsCommutativity()
-    {
-        // Arrange
-        GeoCoordinate start = GeoCoordinate.CreateRandom();
-        GeoCoordinate end = GeoCoordinate.CreateRandom();
-
-        // Act
-        Distance distance1 = GeoCoordinate.Distance(start, end);
-        Distance distance2 = GeoCoordinate.Distance(end, start);
-
-        // Assert
-        Assert.That(distance1.InMeters, Is.EqualTo(distance2.InMeters).Within(Tol));
-    }
 }

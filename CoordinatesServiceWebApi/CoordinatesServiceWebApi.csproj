@@ -15,5 +15,6 @@
 
     <ItemGroup>
         <InternalsVisibleTo Include="CoordinatesServiceWebApi.UnitTests" />
+        <InternalsVisibleTo Include="CoordinatesServiceWebApi.IntegrationTests" />
     </ItemGroup>
 </Project>
