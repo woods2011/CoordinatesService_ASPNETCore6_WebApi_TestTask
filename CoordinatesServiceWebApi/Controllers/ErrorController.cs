@@ -67,7 +67,7 @@ public class ErrorController : ControllerBase
             exception,
             "An error occurred while processing user request. {@ErrorMessage}, {@DateTimeUtc}",
             exception.Message, DateTime.UtcNow);
-        
+
         return Problem();
     }
 }

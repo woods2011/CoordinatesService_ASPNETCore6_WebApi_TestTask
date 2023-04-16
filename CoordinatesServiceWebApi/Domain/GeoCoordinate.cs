@@ -7,7 +7,7 @@ namespace CoordinatesServiceWebApi.Domain;
 /// </summary>
 public readonly record struct GeoCoordinate
 {
-    public const int EarthRadiusInMetres = 6_371_000;
+    private const int EarthRadiusInMetres = 6_371_000;
 
     public const int MinLatitude = -90;
     public const int MaxLatitude = 90;
@@ -24,7 +24,7 @@ public readonly record struct GeoCoordinate
     /// </summary>
     /// <param name="latitude">Широта</param>
     /// <param name="longitude">Долгота</param>
-    /// <exception cref="DomainValidationException">При недопустимых значениях широты или долготы</exception>
+    /// <exception cref="DomainValidationException">значения широты или долготы находятся вне допустимого диапозона</exception>
     public GeoCoordinate(double latitude, double longitude) : this()
     {
         if (latitude is < MinLatitude or > MaxLatitude)
@@ -37,7 +37,7 @@ public readonly record struct GeoCoordinate
         Latitude = latitude;
         Longitude = longitude;
     }
-    
+
 
     /// <summary>
     /// Рассчитывает дистанцию между двумя географическими координатами по формуле гаверсинуса
@@ -68,7 +68,7 @@ public readonly record struct GeoCoordinate
         return Domain.Distance.FromMeters(distanceInMeters);
     }
 
-    
+
     /// <summary>
     /// Создает случайную географическую координату
     /// </summary>

@@ -6,7 +6,7 @@ namespace CoordinatesServiceWebApi.UnitTests.Helpers;
 public class RandomExtensionsTests
 {
     private const double Tol = 1e-4;
-    
+
     [Test]
     public void NextDoubleInRange_ReturnsValueWithinRange_WhenRangeIsValid()
     {

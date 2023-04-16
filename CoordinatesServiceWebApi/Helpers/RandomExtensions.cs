@@ -10,7 +10,7 @@ public static class RandomExtensions
 
         double range = maxValue - minValue;
         double randomValue = minValue + random.NextDouble() * range;
-        
+
         return randomValue;
     }
 }

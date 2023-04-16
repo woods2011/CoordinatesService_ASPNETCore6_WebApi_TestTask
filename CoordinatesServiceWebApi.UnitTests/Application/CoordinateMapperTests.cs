@@ -8,7 +8,7 @@ namespace CoordinatesServiceWebApi.UnitTests.Application;
 public class CoordinateMapperTests
 {
     private const double Tol = 1e-4;
-    
+
     [Test]
     public void MapToDomain_ShouldMapCoordinateDtoToGeoCoordinate()
     {
@@ -31,7 +31,7 @@ public class CoordinateMapperTests
 
         // Act
         CoordinateDto coordinateDto = CoordinateMapper.MapToDto(coordinateDomain);
-        
+
         // Assert
         Assert.That(coordinateDto.Latitude, Is.EqualTo(coordinateDomain.Latitude).Within(Tol));
         Assert.That(coordinateDto.Longitude, Is.EqualTo(coordinateDomain.Longitude).Within(Tol));

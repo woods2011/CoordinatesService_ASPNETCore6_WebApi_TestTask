@@ -8,7 +8,7 @@ namespace CoordinatesServiceWebApi.UnitTests.Application;
 [TestFixture]
 public class CoordinatesServiceTests
 {
-    // Не использую [SetUp], т.к. в текущей реализации сервис не имеет состояния
+    // Не использую [SetUp], т.к. в текущей реализации сервис не имеет* состояния
     private readonly CoordinatesService _sut = new();
     private const double Tol = 1e-4;
 
@@ -31,8 +31,8 @@ public class CoordinatesServiceTests
         // Assert
         Assert.DoesNotThrow(Act);
     }
-    
-    
+
+
     [Test]
     public void CalculateTotalDistance_ReturnsZero_WhenLessThenTwoCoordinatesProvided()
     {
@@ -79,7 +79,7 @@ public class CoordinatesServiceTests
         // Assert
         Assert.That(distanceForReversed.Metres, Is.EqualTo(expectedDistance.Metres).Within(Tol));
     }
-    
+
     [TestCaseSource(nameof(TestData))]
     public void CalculateTotalDistance_ReturnsCorrectDistance_WhenMoreThenOneCoordinatesProvided(
         CoordinateDto[] coordinateDtos,

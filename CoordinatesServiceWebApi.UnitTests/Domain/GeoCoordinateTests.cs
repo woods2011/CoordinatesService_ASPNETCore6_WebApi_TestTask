@@ -33,7 +33,7 @@ public class TestGeoCoordinate
         // Assert
         Assert.Throws<DomainValidationException>(Act);
     }
-    
+
 
     [Test]
     public void CreateRandom_ReturnsValidInstances()
@@ -44,7 +44,7 @@ public class TestGeoCoordinate
         // Assert
         Assert.DoesNotThrow(Act);
     }
-    
+
 
     [Test]
     [Repeat(50)]
@@ -61,7 +61,7 @@ public class TestGeoCoordinate
         // Assert
         Assert.That(distance1.InMeters, Is.EqualTo(distance2.InMeters).Within(Tol));
     }
-    
+
     [TestCaseSource(nameof(DistanceToTestData))]
     public void DistanceTo_ReturnsCorrectDistanceBetweenTwoPoints(
         GeoCoordinate start,

@@ -9,9 +9,8 @@ namespace CoordinatesServiceWebApi.Application.Services;
 public class CoordinatesService
 {
     private readonly Random _random;
-    
-    public CoordinatesService(Random? random = null) => 
-        _random = random ?? Random.Shared;
+
+    public CoordinatesService(Random? random = null) => _random = random ?? Random.Shared;
 
     /// <summary>
     /// Генерирует коллекцию случайных географических координат
@@ -25,7 +24,7 @@ public class CoordinatesService
             .Select(CoordinateMapper.MapToDto)
             .ToList();
     }
-    
+
     /// <summary>
     /// Рассчитывает суммарное расстояние между полученными координатами по формуле гаверсинуса
     /// </summary>
