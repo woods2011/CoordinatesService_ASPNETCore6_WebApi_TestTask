@@ -14,7 +14,7 @@ public class TestGeoCoordinate
     public void GeoCoordinateCtor_ReturnsValidInstance_WhenCoordinatesAreValid(double latitude, double longitude)
     {
         // Act
-        GeoCoordinate geoCoordinate = new GeoCoordinate(latitude, longitude);
+        GeoCoordinate geoCoordinate = new(latitude, longitude);
 
         // Assert
         Assert.That(geoCoordinate.Latitude, Is.EqualTo(latitude).Within(Tol));

@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoordinatesServiceWebApi", "CoordinatesServiceWebApi\CoordinatesServiceWebApi.csproj", "{83EC2742-383A-4C7F-B5A0-A100C37A8005}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoordinatesServiceWebApi.UnitTests", "CoordinatesServiceWebApi.UnitTests\CoordinatesServiceWebApi.UnitTests.csproj", "{F6BF4A35-A07E-4B5E-A1A1-A6C2BF4ACA9A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{83EC2742-383A-4C7F-B5A0-A100C37A8005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83EC2742-383A-4C7F-B5A0-A100C37A8005}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83EC2742-383A-4C7F-B5A0-A100C37A8005}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83EC2742-383A-4C7F-B5A0-A100C37A8005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6BF4A35-A07E-4B5E-A1A1-A6C2BF4ACA9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6BF4A35-A07E-4B5E-A1A1-A6C2BF4ACA9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6BF4A35-A07E-4B5E-A1A1-A6C2BF4ACA9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6BF4A35-A07E-4B5E-A1A1-A6C2BF4ACA9A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

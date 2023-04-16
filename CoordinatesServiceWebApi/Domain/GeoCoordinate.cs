@@ -36,24 +36,23 @@ public readonly record struct GeoCoordinate
     public static Distance Distance(GeoCoordinate a, GeoCoordinate b)
     {
         static double ToRadians(double degrees) => degrees * Math.PI / 180;
-        
+
         double latitudeA = ToRadians(a.Latitude);
         double latitudeB = ToRadians(b.Latitude);
         double latitudeDiff = latitudeB - latitudeA;
         double latitudeDiffSin = Math.Sin(latitudeDiff / 2);
-        
+
         double longitudeDiff = ToRadians(b.Longitude - a.Longitude);
         double longitudeDiffSin = Math.Sin(longitudeDiff / 2);
-        
+
         double haversine = latitudeDiffSin * latitudeDiffSin +
                            longitudeDiffSin * longitudeDiffSin * Math.Cos(latitudeA) * Math.Cos(latitudeB);
-        
+
         double distanceInMeters = 2 * EarthRadiusInMetres * Math.Asin(Math.Sqrt(haversine));
-        
+
         return Domain.Distance.FromMeters(distanceInMeters);
     }
-    
-    
+
     public static GeoCoordinate CreateRandom(Random? random = null)
     {
         random ??= Random.Shared;
